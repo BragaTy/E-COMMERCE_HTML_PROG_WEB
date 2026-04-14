@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Notícia - Reajuste PS5 - GAME STATION</title>
+    <style>
+        body { margin: 0; padding: 0; color: white; font-family: sans-serif; background-image: url('fundo_gamestation.png'); background-size: cover; background-attachment: fixed; }
+        header { background-image: url('fundo_metal.png'); display: flex; align-items: center; justify-content: space-between; padding: 20px 50px; border-bottom: 2px solid #00f0ff; box-shadow: 0px 5px 20px rgba(0,0,0,0.8); position: relative; }
+        .identidade-visual { display: flex; align-items: center; }
+        .logo-img { width: 100px; filter: drop-shadow(0 0 15px #00f0ff); }
+        .titulo-container { position: absolute; left: 50%; transform: translateX(-50%); display: flex; justify-content: center; align-items: center; width: 100%; pointer-events: none; }
+        .titulo-3d { height: 80px; filter: drop-shadow(0 0 15px rgba(0, 240, 255, 0.6)); pointer-events: auto; }
+        nav { display: flex; align-items: center; z-index: 1; }
+        nav a { color: white; text-decoration: none; font-weight: bold; margin-left: 20px; text-transform: uppercase; }
+        nav a:hover { color: #00ff66; }
+        .carrinho-img { width: 50px; vertical-align: middle; margin-left: 10px; filter: drop-shadow(0 0 5px #fff); }
+        .container-noticia { max-width: 800px; margin: 40px auto; min-height: 60vh; background: rgba(0,0,0,0.85); padding: 40px; border-radius: 10px; border: 1px solid #333; line-height: 1.8; }
+        .voltar { color: #00ff66; text-decoration: none; font-size: 14px; font-weight: bold; }
+        .capa-noticia { width: 100%; border-radius: 5px; margin: 20px 0; border: 1px solid #00f0ff; }
+        h1 { color: #ffffff; font-size: 32px; margin-bottom: 10px; }
+        .data { color: #00ff66; font-size: 12px; text-transform: uppercase; display: block; margin-bottom: 30px; }
+        p { color: #ccc; font-size: 17px; }
+        footer { background-image: url('fundo_metal.png'); border-top: 2px solid #00f0ff; padding: 40px 50px; margin-top: 80px; box-shadow: 0px -5px 20px rgba(0,0,0,0.8); display: flex; justify-content: center; align-items: center; gap: 30px; }
+        .footer-info { color: #ccc; font-size: 14px; text-align: left; }
+        .footer-info strong { color: #00f0ff; }
+        .footer-info p { margin: 5px 0; }
+        .logo-footer { width: 80px; filter: drop-shadow(0 0 10px #00f0ff); }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="identidade-visual">
+            <img src="logo.png" alt="Logo" class="logo-img">
+        </div>
+        <div class="titulo-container">
+            <img src="titulo_3d.png" alt="GAME STATION" class="titulo-3d">
+        </div>
+        <nav>
+            <a href="index.html">[ HOME ]</a>
+            <a href="faleconosco.html">[ FALE CONOSCO ]</a>
+            <a href="catalogo.html">[ CATÁLOGO ]</a>
+            <a href="Carrinho.html"><img src="Carrinho.jpg" alt="Carrinho" class="carrinho-img"></a>
+        </nav>
+    </header>
+
+    <div class="container-noticia">
+        <a href="index.html" class="voltar">← VOLTAR PARA A HOME</a>
+        <h1>Sony confirma reajuste nos preços do PlayStation 5 no Brasil</h1>
+        <span class="data">Publicado em: 05 de Abril de 2026 | Por: Redação Game Station</span>
+        <img src="noticia_ps5.png" class="capa-noticia">
+        <p>A Sony Interactive Entertainment pegou a comunidade gamer de surpresa nesta manhã ao oficializar uma nova tabela de preços para o ecossistema PlayStation no território brasileiro.</p>
+    </div>
+
+    <footer>
+        <img src="logo.png" alt="Logo" class="logo-footer">
+        <div class="footer-info">
+            <p><strong>Nome:</strong> João Antônio | <strong>E-mail:</strong> ja653944@gmail.com | <strong>Telefone:</strong> (31) 99970-6300</p>
+            <p><strong>Nome:</strong> Matheus Braga | <strong>E-mail:</strong> matheus_braga98@yahoo.com.br | <strong>Telefone:</strong> (31) 989375113</p>
+            <p style="font-size: 12px; margin-top: 10px; color: #666;">&copy; 2026 Game Station - Hardware & Games. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>

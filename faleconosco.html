@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>GAME STATION - Contato</title>
+    <style>
+        body { margin: 0; padding: 0; color: white; font-family: sans-serif; background-image: url('fundo_gamestation.png'); background-size: cover; background-attachment: fixed; }
+        header { background-image: url('fundo_metal.png'); display: flex; align-items: center; justify-content: space-between; padding: 20px 50px; border-bottom: 2px solid #00f0ff; box-shadow: 0px 5px 20px rgba(0,0,0,0.8); position: relative; }
+        .identidade-visual { display: flex; align-items: center; }
+        .logo-img { width: 100px; filter: drop-shadow(0 0 15px #00f0ff); }
+        .titulo-container { position: absolute; left: 50%; transform: translateX(-50%); display: flex; justify-content: center; align-items: center; width: 100%; pointer-events: none; }
+        .titulo-3d { height: 80px; filter: drop-shadow(0 0 15px rgba(0, 240, 255, 0.6)); pointer-events: auto; }
+        nav { display: flex; align-items: center; z-index: 1; }
+        nav a { color: white; text-decoration: none; font-weight: bold; margin-left: 20px; text-transform: uppercase; }
+        nav a:hover { color: #00ff66; }
+        .carrinho-img { width: 50px; vertical-align: middle; margin-left: 10px; filter: drop-shadow(0 0 5px #fff); }
+        .container-form { max-width: 500px; margin: 50px auto; min-height: 50vh; background: rgba(0,0,0,0.8); padding: 30px; border-radius: 10px; border: 1px solid #00f0ff; }
+        input, textarea, select { width: 100%; padding: 10px; margin-top: 10px; background: #222; border: 1px solid #444; color: white; box-sizing: border-box; }
+        button { width: 100%; padding: 15px; margin-top: 20px; background: #00ff66; border: none; font-weight: bold; cursor: pointer; text-transform: uppercase; }
+        label { display: block; margin-top: 15px; color: #00f0ff; font-weight: bold; }
+        footer { background-image: url('fundo_metal.png'); border-top: 2px solid #00f0ff; padding: 40px 50px; margin-top: 80px; box-shadow: 0px -5px 20px rgba(0,0,0,0.8); display: flex; justify-content: center; align-items: center; gap: 30px; }
+        .footer-info { color: #ccc; font-size: 14px; text-align: left; }
+        .footer-info strong { color: #00f0ff; }
+        .footer-info p { margin: 5px 0; }
+        .logo-footer { width: 80px; filter: drop-shadow(0 0 10px #00f0ff); }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="identidade-visual">
+            <img src="logo.png" alt="Logo" class="logo-img">
+        </div>
+        <div class="titulo-container">
+            <img src="titulo_3d.png" alt="GAME STATION" class="titulo-3d">
+        </div>
+        <nav>
+            <a href="index.html">[ HOME ]</a>
+            <a href="faleconosco.html">[ FALE CONOSCO ]</a>
+            <a href="catalogo.html">[ CATÁLOGO ]</a>
+            <a href="Carrinho.html"><img src="Carrinho.jpg" alt="Carrinho" class="carrinho-img"></a>
+        </nav>
+    </header>
+
+    <div class="container-form">
+        <h2 style="color: #00f0ff; text-align: center; text-transform: uppercase;">Fale Conosco</h2>
+        <form>
+            <label>Nome:</label>
+            <input type="text">
+            <label>E-mail:</label>
+            <input type="email">
+            <label>Assunto:</label>
+            <select>
+                <option>Suporte</option>
+                <option>Vendas</option>
+                <option>Parcerias</option>
+            </select>
+            <label>Mensagem:</label>
+            <textarea rows="5"></textarea>
+            <button type="submit">Enviar Mensagem</button>
+        </form>
+    </div>
+
+    <footer>
+        <img src="logo.png" alt="Logo" class="logo-footer">
+        <div class="footer-info">
+            <p><strong>Nome:</strong> João Antônio | <strong>E-mail:</strong> ja653944@gmail.com | <strong>Telefone:</strong> (31) 99970-6300</p>
+            <p><strong>Nome:</strong> Matheus Braga | <strong>E-mail:</strong> matheus_braga98@yahoo.com.br | <strong>Telefone:</strong> (31) 989375113</p>
+            <p style="font-size: 12px; margin-top: 10px; color: #666;">&copy; 2026 Game Station - Hardware & Games. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>	

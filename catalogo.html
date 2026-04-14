@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Catálogo de Produtos - Game Station</title>
+    <style>
+        body {
+            margin: 0; padding: 0;
+            background-image: url("fundo_gamestation.png");
+            background-size: cover;
+            background-attachment: fixed;
+            color: white;
+            font-family: sans-serif;
+        }
+        header { background-image: url('fundo_metal.png'); display: flex; align-items: center; justify-content: space-between; padding: 20px 50px; border-bottom: 2px solid #00f0ff; box-shadow: 0px 5px 20px rgba(0,0,0,0.8); position: relative; }
+        .identidade-visual { display: flex; align-items: center; }
+        .logo-img { width: 100px; filter: drop-shadow(0 0 15px #00f0ff); }
+        .titulo-container { position: absolute; left: 50%; transform: translateX(-50%); display: flex; justify-content: center; align-items: center; width: 100%; pointer-events: none; }
+        .titulo-3d { height: 80px; filter: drop-shadow(0 0 15px rgba(0, 240, 255, 0.6)); pointer-events: auto; }
+        nav { display: flex; align-items: center; z-index: 1; }
+        nav a { color: white; text-decoration: none; font-weight: bold; margin-left: 20px; text-transform: uppercase; }
+        nav a:hover { color: #00ff66; }
+        
+        footer { background-image: url('fundo_metal.png'); border-top: 2px solid #00f0ff; padding: 40px 50px; margin-top: 80px; box-shadow: 0px -5px 20px rgba(0,0,0,0.8); display: flex; justify-content: center; align-items: center; gap: 30px; }
+        .footer-info { color: #ccc; font-size: 14px; text-align: left; }
+        .footer-info strong { color: #00f0ff; }
+        .footer-info p { margin: 5px 0; }
+        .logo-footer { width: 80px; filter: drop-shadow(0 0 10px #00f0ff); }
+
+        .produto-card {
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            height: 420px; 
+        }
+        
+        .produto-card img {
+            width: 100%;
+            height: 180px; 
+            object-fit: contain; 
+            margin-bottom: 10px;
+        }
+
+        .produto-card p {
+            color: #ccc; 
+            font-size: 14px;
+            height: 35px; 
+            margin-top: 5px;
+        }
+
+        .preco {
+            font-size: 22px;
+            font-weight: bold;
+            display: block;
+            margin: 15px 0;
+            color: white;
+        }
+
+        .ps-card { border: 2px solid #00f0ff; }
+        .ps-card:hover { box-shadow: 0px 0px 20px #00f0ff; cursor: pointer; }
+        .ps-card h3 { color: #00f0ff; margin-bottom: 5px; height: 45px; }
+        .btn-ps { background-color: #00f0ff; width: 100%; padding: 10px; font-weight: bold; border: none; color: black; cursor: pointer; border-radius: 5px; text-transform: uppercase;}
+
+        .xbox-card { border: 2px solid #00ff66; }
+        .xbox-card:hover { box-shadow: 0px 0px 20px #00ff66; cursor: pointer; }
+        .xbox-card h3 { color: #00ff66; margin-bottom: 5px; height: 45px; }
+        .btn-xbox { background-color: #00ff66; width: 100%; padding: 10px; font-weight: bold; border: none; color: black; cursor: pointer; border-radius: 5px; text-transform: uppercase;}
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="identidade-visual">
+            <img src="logo.png" alt="Logo" class="logo-img">
+        </div>
+        <div class="titulo-container">
+            <img src="titulo_3d.png" alt="GAME STATION" class="titulo-3d">
+        </div>
+        <nav>
+            <a href="index.html">[ HOME ]</a>
+            <a href="faleconosco.html">[ FALE CONOSCO ]</a>
+            <a href="catalogo.html">[ CATÁLOGO ]</a>
+            <a href="Carrinho.html">
+                <img src="Carrinho.jpg" alt="Carrinho" width="50" style="vertical-align:middle; margin-left: 10px;">
+            </a>
+        </nav>
+    </header>
+
+    <div style="min-height: 60vh; padding: 20px;">
+        <table width="100%" border="0" cellspacing="30">
+            <tr>
+                <td width="20%" valign="top" style="background:rgba(0,0,0,0.8); padding:20px; border-radius: 10px; border: 1px solid #333;">
+                    <label for="marcas"><h3 style="color:#00f0ff; text-transform:uppercase;">Selecione a marca</h3></label>
+
+                    <select id="marcas" name="marcas" style="width: 100%; padding: 8px;">
+                        <option value="Todos">Todos</option>
+                        <option value="PlayStation">PlayStation</option>
+                        <option value="Xbox">Xbox</option>
+                    </select>
+                    <br><br>
+                    
+                    <h3 style="color:#00ff4c; text-transform:uppercase;">Escolha a categoria</h3>
+                    <form method="post" action="script">
+                        <input type="checkbox" name="todos" checked /> Todos <br><br>
+                        <input type="checkbox" name="Console" /> Console <br><br>
+                        <input type="checkbox" name="Controle" /> Controle <br><br>
+                        <input type="checkbox" name="Headsets" /> Headsets <br><br>
+                        <input type="checkbox" name="Jogos" /> Jogos <br><br>
+                        
+                        <input type="submit" value="FILTRAR PRODUTOS" style="width: 100%; padding: 10px; background: #00ff66; color: black; border: none; font-weight: bold; cursor: pointer; text-transform: uppercase; margin-top: 10px;">
+                        <input type="reset" value="Limpar Filtros" style="width: 100%; padding: 5px; background: transparent; color: #ff4444; border: 1px solid #ff4444; cursor: pointer; margin-top: 10px; font-size: 12px;">
+                    </form>
+                </td>
+            
+                <td width="80%" valign="top">
+                    <table width="100%" border="0" cellspacing="15">
+                        
+                        <tr>            
+                            <td width="25%" align="center" valign="top">
+                                <div class="produto-card ps-card">
+                                    <img src="ps5_console.png" alt="PS5">
+                                    <h3>PlayStation®5 Slim</h3>
+                                    <p>1TB | Suporte a 4K |– Pacote ASTRO BOT</p>
+                                    <span class="preco">R$ 3.890,00</span>
+                                    <a href="Carrinho.html"><button class="btn-ps">COMPRAR</button></a>
+                                </div>
+                            </td>
+                            <td width="25%" align="center" valign="top">
+                                <div class="produto-card ps-card">
+                                    <img src="PS5SlimSpider.jpg" alt="PS5">
+                                    <h3>PlayStation®5 Slim</h3>
+                                    <p>1TB | Suporte a 4K |– Pacote Spider-man</p>
+                                    <span class="preco">R$ 4.000,00</span>
+                                    <a href="Carrinho.html"><button class="btn-ps">COMPRAR</button></a>
+                                </div>
+                            </td>
+                            <td width="25%" align="center" valign="top">
+                                <div class="produto-card ps-card">
+                                    <img src="PS5-FIFA.jpg" alt="PS5">
+                                    <h3>PlayStation®5</h3>
+                                    <p>1TB | Suporte a 4K |– Pacote FC 24</p>
+                                    <span class="preco">R$ 5.230,00</span>
+                                    <a href="Carrinho.html"><button class="btn-ps">COMPRAR</button></a>
+                                </div>
+                            </td>
+                            <td width="25%" align="center" valign="top">
+                                <div class="produto-card ps-card">
+                                    <img src="PS5.jpg" alt="PS5">
+                                    <h3>PlayStation®5</h3>
+                                    <p>1TB | Suporte a 4K</p>
+                                    <span class="preco">R$ 5.000,00</span>
+                                    <a href="Carrinho.html"><button class="btn-ps">COMPRAR</button></a>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td width="25%" align="center" valign="top">
+                                <div class="produto-card ps-card">
+                                    <img src="PS5-EDICAO-GHOST.jpg" alt="PS5">
+                                    <h3>PlayStation®5 Versão Ghost</h3>
+                                    <p>1TB | Suporte a 4K</p>
+                                    <span class="preco">R$ 5.950,00</span>
+                                    <a href="Carrinho.html"><button class="btn-ps">COMPRAR</button></a>
+                                </div>
+                            </td>
+                            <td width="25%" align="center" valign="top">
+                                <div class="produto-card xbox-card">
+                                    <img src="XboxSeriesX.jpg" alt="XboxSeriesX">
+                                    <h3>Xbox Series X</h3>
+                                    <p>1TB| SSD | 4K Nativo | 120 FPS</p>
+                                    <span class="preco">R$ 5.120,00</span>
+                                    <a href="Carrinho.html"><button class="btn-xbox">COMPRAR</button></a>
+                                </div>
+                            </td>
+                            <td width="25%" align="center" valign="top">
+                                <div class="produto-card xbox-card">
+                                    <img src="XboxSeriesS.jpg" alt="XboxSeriesS">
+                                    <h3>Xbox Series S</h3>
+                                    <p>500GB| SSD | FullHD | 120 FPS</p>
+                                    <span class="preco">R$ 3.590,00</span>
+                                    <a href="Carrinho.html"><button class="btn-xbox">COMPRAR</button></a>
+                                </div>
+                            </td>
+                            <td width="25%" align="center" valign="top">
+                                <div class="produto-card xbox-card">
+                                    <img src="XboxSeriesXBranco.jpg" alt="XboxSeriesX">
+                                    <h3>Xbox Series X Branco</h3>
+                                    <p>500GB| SSD | Midia Digital</p>
+                                    <span class="preco">R$ 4.500,00</span>
+                                    <a href="Carrinho.html"><button class="btn-xbox">COMPRAR</button></a>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td width="25%" align="center" valign="top">
+                                <div class="produto-card ps-card">
+                                    <img src="Ps5Controle-black.jpg" alt="Controle">
+                                    <h3>Controle PS5 Preto</h3>
+                                    <p>Alta Performance | Gatilhos Ajustáveis</p>
+                                    <span class="preco">R$ 899,90</span>
+                                    <a href="Carrinho.html"><button class="btn-ps">COMPRAR</button></a>
+                                </div>
+                            </td>
+                            <td width="25%" align="center" valign="top">
+                                <div class="produto-card ps-card">
+                                    <img src="Ps5Controle-GodOfwar.jpg" alt="Controle">
+                                    <h3>Controle PS5 God Of War</h3>
+                                    <p>Gatilhos Ajustáveis</p>
+                                    <span class="preco">R$ 1.290,00</span>
+                                    <a href="Carrinho.html"><button class="btn-ps">COMPRAR</button></a>
+                                </div>
+                            </td>
+                            <td width="25%" align="center" valign="top">
+                                <div class="produto-card ps-card">
+                                    <img src="Ps5Controle-Vermelho.jpg" alt="Controle">
+                                    <h3>Controle PS5 Vermelho</h3>
+                                    <p>Alta Performance | Gatilhos Ajustáveis</p>
+                                    <span class="preco">R$ 650,90</span>
+                                    <a href="Carrinho.html"><button class="btn-ps">COMPRAR</button></a>
+                                </div>
+                            </td>
+                            <td width="25%" align="center" valign="top">
+                                <div class="produto-card ps-card">
+                                    <img src="FoneOuvidoPs5.jpg" alt="Fone de ouvido">
+                                    <h3>Fone de ouvido PS5</h3>
+                                    <p>Fones sem cabo</p>
+                                    <span class="preco">R$ 1.100,90</span>
+                                    <a href="Carrinho.html"><button class="btn-ps">COMPRAR</button></a>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td width="25%" align="center" valign="top">
+                                <div class="produto-card ps-card">
+                                    <img src="HeadPhonePs5.jpg" alt="Fone de ouvido">
+                                    <h3>HeadPhone PS5</h3>
+                                    <p>Fones sem cabo</p>
+                                    <span class="preco">R$ 1.500,90</span>
+                                    <a href="Carrinho.html"><button class="btn-ps">COMPRAR</button></a>
+                                </div>
+                            </td>
+                            <td width="25%" align="center" valign="top">
+                                <div class="produto-card xbox-card">
+                                    <img src="XboxControleAzul.jpg" alt="Controle">
+                                    <h3>Controle Xbox Azul</h3>
+                                    <p>Alta Performance | Gatilhos Ajustáveis</p>
+                                    <span class="preco">R$ 499,00</span>
+                                    <a href="Carrinho.html"><button class="btn-xbox">COMPRAR</button></a>
+                                </div>
+                            </td>
+                            <td width="25%" align="center" valign="top">
+                                <div class="produto-card xbox-card">
+                                    <img src="XboxControleRosa.jpg" alt="Controle">
+                                    <h3>Pulse 3D Wireless</h3>
+                                    <p>Alta Performance | Gatilhos Ajustáveis</p>
+                                    <span class="preco">R$ 450,00</span>
+                                    <a href="Carrinho.html"><button class="btn-xbox">COMPRAR</button></a>
+                                </div>
+                            </td>
+                            <td width="25%" align="center" valign="top">
+                                <div class="produto-card xbox-card">
+                                    <img src="XboxControleVerde.jpg" alt="Controle">
+                                    <h3>Controle verde xbox</h3>
+                                    <p>Alta Performance | Gatilhos Ajustáveis</p>
+                                    <span class="preco">R$ 450,00</span>
+                                    <a href="Carrinho.html"><button class="btn-xbox">COMPRAR</button></a>
+                                </div>
+                            </td>  
+                        </tr>
+
+                        <tr>
+                            <td width="25%" align="center" valign="top">
+                                <div class="produto-card xbox-card">
+                                    <img src="ACOrigins.jpg" alt="JOGO">
+                                    <h3>AC Origins | Xbox</h3>
+                                    <p>Jogo Mídia Física</p>
+                                    <span class="preco">R$ 175,00</span>
+                                    <a href="Carrinho.html"><button class="btn-xbox">COMPRAR</button></a>
+                                </div>
+                            </td> 
+                            <td width="25%" align="center" valign="top">
+                                <div class="produto-card xbox-card">
+                                    <img src="BlackFlag.jpg" alt="JOGO">
+                                    <h3>AC Black Flag | Xbox</h3>
+                                    <p>Jogo Mídia Física</p>
+                                    <span class="preco">R$ 165,00</span>
+                                    <a href="Carrinho.html"><button class="btn-xbox">COMPRAR</button></a>
+                                </div>
+                            </td> 
+                            <td width="25%" align="center" valign="top">
+                                <div class="produto-card xbox-card">
+                                    <img src="Gotham.jpg" alt="JOGO">
+                                    <h3>Gotham Knigths | Xbox</h3>
+                                    <p>Jogo Mídia Física</p>
+                                    <span class="preco">R$ 190,00</span>
+                                    <a href="Carrinho.html"><button class="btn-xbox">COMPRAR</button></a>
+                                </div>
+                            </td> 
+                            <td width="25%" align="center" valign="top">
+                                <div class="produto-card xbox-card">
+                                    <img src="StarWars.jpg" alt="JOGO">
+                                    <h3>Star Wars Jedi | Xbox</h3>
+                                    <p>Survivor Edition</p>
+                                    <span class="preco">R$ 250,00</span>
+                                    <a href="Carrinho.html"><button class="btn-xbox">COMPRAR</button></a>
+                                </div>
+                            </td>
+                        </tr> 
+
+                        <tr>
+                            <td width="25%" align="center" valign="top">
+                                <div class="produto-card ps-card">
+                                    <img src="AC.jpg" alt="JOGO">
+                                    <h3>AC Valhalla | PS5</h3>
+                                    <p>Expansão Viking</p>
+                                    <span class="preco">R$ 210,95</span>
+                                    <a href="Carrinho.html"><button class="btn-ps">COMPRAR</button></a>
+                                </div>
+                            </td> 
+                            <td width="25%" align="center" valign="top">
+                                <div class="produto-card ps-card">
+                                    <img src="uncharted4.jpg" alt="JOGO">
+                                    <h3>Uncharted 4 | PS5</h3>
+                                    <p>O Fim de um Ladrão</p>
+                                    <span class="preco">R$ 180,00</span>
+                                    <a href="Carrinho.html"><button class="btn-ps">COMPRAR</button></a>
+                                </div>
+                            </td> 
+                            <td width="25%" align="center" valign="top">
+                                <div class="produto-card ps-card">
+                                    <img src="RedDEad2.jpg" alt="JOGO">
+                                    <h3>Red Dead Redemption 2</h3>
+                                    <p>Edição Padrão</p>
+                                    <span class="preco">R$ 200,00</span>
+                                    <a href="Carrinho.html"><button class="btn-ps">COMPRAR</button></a>
+                                </div>
+                            </td> 
+                            <td width="25%" align="center" valign="top">
+                                <div class="produto-card ps-card">
+                                    <img src="Spider.jpg" alt="JOGO">
+                                    <h3>Spider-Man | PS5</h3>
+                                    <p>Aventura Heroica</p>
+                                    <span class="preco">R$ 310,00</span>
+                                    <a href="Carrinho.html"><button class="btn-ps">COMPRAR</button></a>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td width="25%" align="center" valign="top">
+                                <div class="produto-card ps-card">
+                                    <img src="crimson_desert.png" alt="JOGO">
+                                    <h3>Crimson Desert</h3>
+                                    <p>O RPG de ação mundo aberto.</p>
+                                    <span class="preco">R$ 349,90</span>
+                                    <a href="Carrinho.html"><button class="btn-ps">COMPRAR</button></a>
+                                </div>
+                            </td> 
+                            <td width="25%"></td>
+                            <td width="25%"></td>
+                            <td width="25%"></td>
+                        </tr>
+
+                    </table>
+                </td> 
+            </tr> 
+        </table>
+    </div>
+
+    <footer>
+        <img src="logo.png" alt="Logo" class="logo-footer">
+        <div class="footer-info">
+            <p><strong>Nome:</strong> João Antônio | <strong>E-mail:</strong> ja653944@gmail.com | <strong>Telefone:</strong> (31) 99970-6300</p>
+            <p><strong>Nome:</strong> Matheus Braga | <strong>E-mail:</strong> matheus_braga98@yahoo.com.br | <strong>Telefone:</strong> (31) 989375113</p>
+            <p style="font-size: 12px; margin-top: 10px; color: #666;">&copy; 2026 Game Station - Hardware & Games. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
